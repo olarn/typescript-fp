@@ -19,7 +19,7 @@ npm install
 to run app (that should not have anything accept print 'Hello, TypeScript.')
 
 ```
-npm run
+npm run dev
 ```
 
 to run test (it will include watch and code coverage), run...
