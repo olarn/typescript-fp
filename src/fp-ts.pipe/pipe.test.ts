@@ -1,4 +1,4 @@
-import { pipe } from 'fp-ts/lib/function'
+import { pipe } from 'fp-ts/function'
 
 type Increment = (x: number) => number
 const increment: Increment = x => x + 1
