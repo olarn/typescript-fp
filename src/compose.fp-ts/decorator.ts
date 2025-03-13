@@ -14,7 +14,7 @@ const api: Api = c => {
   }
 }
 
-const cachedApi: Api = (c: Customer) => {
+const cachedApi: Api = c => {
   return {
     name: 'cached(John)',
     lastName: 'cached(Doe)',
@@ -22,7 +22,7 @@ const cachedApi: Api = (c: Customer) => {
   }
 }
 
-const encrypted: Api = (c: Customer) => {
+const encrypted: Api = c => {
   return {
     name: `encrypted(${c.name})`,
     lastName: `encrypted(${c.lastName})`,
