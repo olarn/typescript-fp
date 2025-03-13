@@ -1,9 +1,11 @@
 import { pipe } from 'fp-ts/lib/function'
-import { api, cachedApi, encrypted } from './decorator'
+import { api, cachedApi, Customer, encrypted } from './decorator'
 
 describe("Playground", () => {
   it("should work", () => {
-    const c = pipe({ name: '', lastName: '', age: 0 },
+    const cus: Customer = { name: 'John', lastName: 'Doe', age: 30 } 
+    const c = pipe(
+      cus,
       api,
       cachedApi,
       encrypted
