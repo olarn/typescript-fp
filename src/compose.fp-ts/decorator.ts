@@ -6,11 +6,11 @@ interface Customer {
 
 type Api = (c: Customer) => Customer
 
-const api: Api = c => {
+const api = (name: string): Customer => {
   return {
-    name: c.name,
-    lastName: c.lastName,
-    age: c.age
+    name: name,
+    lastName: 'Doe',
+    age: 30
   }
 }
 
