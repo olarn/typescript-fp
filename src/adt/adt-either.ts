@@ -20,7 +20,8 @@ const right = <A, E = never > (a: A): Either<E, A> => ({
   _tag: 'right', right: a  
 })
 
-const isLeft = <E, A>(x: Either<E, A>): x is Left<E> => x._tag === 'left' 
+const isLeft = <E, A>(x: Either<E, A>): x is Left<E> =>
+  x._tag === 'left' 
 
 export { left, right, isLeft }
 
