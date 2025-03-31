@@ -26,6 +26,9 @@ const isLeft = <E, A>(x: Either<E, A>): x is Left<E> =>
 
 // Pattern Matching ------------------------- 
 
-// Start here...
+type Match = <E, A, B>(onLeft: (e: E) => B, onRight: (a: A) => B) => 
+  (x: Either<E, A>) => B
+const match: Match = (onLeft, onRight) => x => 
+  isLeft(x) ? onLeft(x.left) : onRight(x.right)
 
-export { Either, left, right, isLeft }
+export { Either, left, right, isLeft, match }
