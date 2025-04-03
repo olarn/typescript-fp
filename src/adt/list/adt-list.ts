@@ -28,12 +28,6 @@ const showList = <A>(xs: List<A>): string =>
 
 // Pattern Matching ----------------------------------------
 
-type Match = <A, B>(
-  onNil: () => B,
-  onCons: (xs: List<A>) => B
-) => (xs: List<A>) => B
-
-const match: Match = (onNil, onCons) => xs =>
-  isNil(xs) ? onNil() : onCons(xs)
-
-export { List, Nil, Cons, nil, cons, isNil, showList, match }
+export {
+  cons, nil, showList,
+}
