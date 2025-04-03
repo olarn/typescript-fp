@@ -36,4 +36,4 @@ type Match = <A, B>(
 const match: Match = (onNil, onCons) => xs =>
   isNil(xs) ? onNil() : onCons(xs)
 
-export { cons, match, nil, showList }
+export { Cons, cons, nil, showList, match }
