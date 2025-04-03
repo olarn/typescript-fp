@@ -1,7 +1,4 @@
-import {
-  // Cons,
-  // cons, match, nil, showList
-} from './adt-list'
+import { nil, showList } from './adt-list'
 import { match as matchFp } from 'ts-pattern'
 
 describe('Pattern Matching with Option Type', () => {
@@ -31,5 +28,14 @@ describe('Pattern Matching with Option Type', () => {
     //     .with({ _tag: 'cons' }, (xs) => showList(xs))
     //     .exhaustive() 
     // ).toEqual('1, 2, 3, 4')
+  })
+
+  it('should maatch nil list to empty string with ts-pattern', () => {
+    // expect(
+    //   matchFp(nil)
+    //     .with({ _tag: 'nil' }, () => '')
+    //     .with({ _tag: 'cons' }, (xs) => showList(xs))
+    //     .exhaustive()
+    // ).toEqual('')
   })
 })
