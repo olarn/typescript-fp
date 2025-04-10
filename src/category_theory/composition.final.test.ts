@@ -23,12 +23,12 @@ describe('Category Theory', () => {
   })
   
   it('proof composition identity', () => {
-    const ida = (x: string): string => x
-    const id_f = flow(ida, findLength)
+    const id1 = (x: string): string => x
+    const id_f = flow(id1, findLength)
     expect(id_f('tiny')).toEqual(findLength('tiny'))
     
-    const idb = (x: number): number => x
-    const f_id = flow(findLength, idb)
+    const id2 = (x: number): number => x
+    const f_id = flow(findLength, id2)
     expect(f_id('tiny')).toEqual(findLength('tiny'))
   })
 })
