@@ -7,7 +7,7 @@ type ToString = (x: number) => string
 const toString: ToString = x => `${x}`
 
 describe('pipe', () => {
-  it('should increment number then to string with Pipe', () => {
+  it('should compose increment and toString functions using pipe', () => {
     const result = pipe(0, increment, toString)
     expect(result).toBe('1')
   })
