@@ -32,4 +32,4 @@ const rollback: Rollback = (amount, logs) => ({
   logs: logs.map(tx => saveGroup.inverse(tx))
 })
 
-export { saveGroup as addGroup, save, rollback }
+export { save, rollback }

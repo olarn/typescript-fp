@@ -1,6 +1,4 @@
-import { empty } from "fp-ts/lib/ReadonlyRecord"
 import { Monoid } from "./monoid"
-import { cons } from "linkedList/linkedlist.finish"
 
 interface Group<A> extends Monoid<A> {
   inverse: (x: A) => A
