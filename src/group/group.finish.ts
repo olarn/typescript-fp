@@ -4,11 +4,15 @@ interface Group<A> extends Monoid<A> {
   inverse: (x: A) => A
 }
 
+// Add Group Lab
+
 const addGroup: Group<number> = {
   concat: (x, y) => x + y,
   empty: 0,
   inverse: (x) => -x
 }
+
+// Caesar Cipher Lab
 
 type Encrypt = (plainText: string, key: number) => string
 type Decrypt = (cipherText: string, key: number) => string 

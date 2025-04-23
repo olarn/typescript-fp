@@ -25,6 +25,7 @@ const decrement: Decrement = sum(-1)
 //   => (a: number)
 //     => (b: number)
 //       => number
+
 type GenericCurrying = <A, B, Z>(f: (a: A, b: B) => Z)
   => (a: A)
     => (b: B)

@@ -1,8 +1,4 @@
-interface Group<A> {
-  concat: (x: A, y: A) => A
-  empty: A
-  inverse: (x: A) => A
-}
+import { Group } from 'fp-ts/Group'
 
 // Create saveGroup to detach add and invert 7% logic.
 
