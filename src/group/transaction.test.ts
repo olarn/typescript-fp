@@ -19,11 +19,11 @@ describe('Saving Acount with Group', () => {
   })
 
   it('should rollback to previous balance', () => {
-  //   expect(
-  //     rollback(newBalance, logs)
-  //   ).toEqual({
-  //     amount: currentBalance,
-  //     logs: transactions
-  //   })
+    // expect(
+    //   rollback(newBalance, logs)
+    // ).toEqual({
+    //   amount: currentBalance,
+    //   logs: transactions
+    // })
   })
 })

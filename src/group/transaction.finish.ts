@@ -21,11 +21,9 @@ const save: Save = (a, t) => ({
 })
 
 type Rollback = (amount: number, logs: number[]) => Result
-const rollback: Rollback = (amount, logs) => ({
-  amount: logs.reduce(
-    (acc, curr) => acc - curr,
-    amount),
-  logs: logs.map(tx => saveGroup.inverse(tx))
+const rollback: Rollback = (a, l) => ({
+  amount: a - l.reduce((acc, curr) => acc + curr, 0),
+  logs: l.map(tx => saveGroup.inverse(tx))
 })
 
 export { save, rollback }
