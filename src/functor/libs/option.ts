@@ -19,10 +19,14 @@ const none: Option<never> = { _tag: 'none' }
 
 // Pattern Matching ------------------------- 
 
-type Match = <A, B>(onNone: () => B, onSome: (a: A) => B) =>
-  (x: Option<A>) => B
+type Match = <A, B>(
+  onNone: () => B,
+  onSome: (a: A) => B
+) => (x: Option<A>) => B
 
 const match: Match = (onNone, onSome) => x => 
-  isNone(x) ? onNone() : onSome(x.value);
+  isNone(x) ?
+    onNone() :
+    onSome(x.value);
 
 export { Option, some, none, match }

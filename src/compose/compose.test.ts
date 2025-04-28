@@ -13,7 +13,7 @@ describe('Compose in FP', () => {
     // expect(incrementThenToString(1)).toBe('2')
   })
 
-  it('should compose increment and toString', () => {
+  it('should compose toString after increment', () => {
     // expect(compose(toString, increment)(1)).toBe('2')
   })
 })
