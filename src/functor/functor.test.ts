@@ -1,5 +1,6 @@
 import { none, some } from "./libs/option"
 import { increment, mapOption, optIncrement, optStrLength, strLength } from "./functor"
+import { compose } from "./libs/compose"
 
 describe('Functor', () => {
   it('Option - StrLength', () => {
@@ -24,5 +25,18 @@ describe('Functor', () => {
     ).toEqual(some(5))
 
     expect(mapOption(strLength)(none)).toEqual(none)
+  })
+
+  it('should get the same result from compose then map and vise versa', () => {
+    expect(
+      compose(
+        mapOption(strLength),
+        mapOption(increment)
+      )(some(`abcd`))
+    ).toEqual(
+      mapOption(
+        compose(strLength, increment)
+      )(some(`abcd`))
+    )
   })
 })

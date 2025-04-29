@@ -1,8 +1,8 @@
-type Compose = <N, S>(
-  f: (x: N) => S,
-  g: (x: N) => N
-) => (x: N) => S
+type Compose = <A, B, C>(
+  f: (x: A) => B,
+  g: (y: B) => C
+) => (z: A) => C
 
-const compose: Compose = (f, g) => (x) => f(g(x))
+const compose: Compose = (f, g) => (x) => g(f(x))
 
 export { compose }
