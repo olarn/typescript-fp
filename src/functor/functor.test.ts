@@ -1,6 +1,7 @@
 import { none, some } from "./libs/option"
-import { increment, mapOption, optIncrement, optStrLength, strLength } from "./functor"
+import { increment, mapEither, mapOption, optIncrement, optStrLength, strLength } from "./functor"
 import { compose } from "./libs/compose"
+import { left, right } from "./libs/either"
 
 describe('Functor', () => {
   it('Option - StrLength', () => {
@@ -37,6 +38,25 @@ describe('Functor', () => {
       mapOption(
         compose(strLength, increment)
       )(some(`abcd`))
+    )
+  })
+
+  it('Map Either - StrLength & Increment', () => {
+    expect(mapEither(strLength)(left('error'))).toEqual(left('error'))
+    expect(mapEither(strLength)(right(`abcd`))).toEqual(right(4))
+    expect(mapEither(increment)(right(4))).toEqual(right(5))
+  })
+
+  it('should get the same result from Either then map and vise versa', () => {
+    expect(
+      compose(
+        mapEither(strLength),
+        mapEither(increment)
+      )(right(`abcd`))
+    ).toEqual(
+      mapEither(
+        compose(strLength, increment)
+      )(right(`abcd`))
     )
   })
 })

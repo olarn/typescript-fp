@@ -1,4 +1,6 @@
 import { match, none, some, Option } from "./libs/option"
+import { Either, left, right, match as matchEither } from "./libs/either"
+
 
 // Option - StrLength -----------------------
 
@@ -22,7 +24,7 @@ const optIncrement: OptIncrement = x => match(
   (value: number) => some(increment(value))
 )(x)
 
-// Map -----------------------
+// Map Option -----------------------
 
 type MapOption = <A, B>(f: (a: A) => B)
   => (x: Option<A>)
@@ -32,4 +34,15 @@ const mapOption: MapOption = f => match(
   (value) => some(f(value)) 
 )
 
-export { strLength, optStrLength, increment, optIncrement, mapOption }
+// Map Either
+
+type MapEither = <A, B, E>(f: (a: A) => B)
+  => (x: Either<E, A>) => Either<E, B> 
+const mapEither: MapEither = f => matchEither(
+  (e) => left(e),
+  (a) => right(f(a))
+)
+
+export {
+  strLength, optStrLength, increment, optIncrement, mapOption, mapEither
+}
