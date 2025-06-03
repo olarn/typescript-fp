@@ -8,10 +8,10 @@ type IncrementThenToString = (x: number) => string
 const incrementThenToString: IncrementThenToString = x => toString(increment(x))
 
 type Compose = <N, S>(
-  f: (x: N) => S,
-  g: (x: N) => N
+  g: (x: N) => S,
+  f: (x: N) => N
 ) => (x: N) => S
 
-const compose: Compose = (f, g) => (x) => f(g(x))
+const compose: Compose = (g, f) => (x) => g(f(x))
 
 export { increment, toString, incrementThenToString, compose }
