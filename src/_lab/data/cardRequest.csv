@@ -1,0 +1,12 @@
+name,salary,has_emp_cer
+John,18000,true
+Mary,17500,false
+Peter,35000,true
+Jane,45000,true
+Jim,32000,true
+Jill,22000,false
+Jack,33000,true
+Jill,40000,false
+Jim,32000,true
+Jill,9000,true
+Sam,60000,true
