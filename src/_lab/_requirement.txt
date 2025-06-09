@@ -6,8 +6,8 @@
   2.3 ถ้า requiredEmpCert = true แปลว่า รายได้อยู่ในช่วงนั้น จะต้องมีหนังสือรับรองเงินเดือนด้วย
   2.4 field ใน cardRequest.csv ที่บอกว่ามีหนังสือรับรองเงินเดือนหรือไม่ คือ field "has_emp_cer"  (เป็น boolean)
   2.5 ถ้า salary ต่ำกว่า 15,000 คือสมัครไม่ได้ต่อให้มีหนังสือรับรองเงินเดือนก็ตาม
-3. ผลลัพธ์ (แยกกัน run ทีละครั้ง ไม่ต้องแสดงพร้อมกัน)
-  3.1 filter เฉพาะคนที่ได้ (ผลลัพธ์เป็น array of CardApproved) พร้อมระบุด้วยว่าได้ card ประเภทไหน (silver, gold, ...)
-  3.2 filter เฉพาะคนที่ไม่ได้ได้ (ผลลัพธ์เป็น array of CardRequest)
+3. ผลลัพธ์ ต้องการ 2 function ที่แยกกัน run ทีละครั้ง ไม่ต้องแสดงพร้อมกัน โดยที่...
+  3.1 filter เฉพาะคนที่ได้ (ผลลัพธ์เป็น array of ApprovalResult) พร้อมระบุด้วยว่าได้ card ประเภทไหน (silver, gold, ...) ใน field "card"
+  3.2 filter เฉพาะคนที่ไม่ได้ (ผลลัพธ์เป็น array of CardRequest)
 4. Validation
   - บางครั้งระบบ batch จากต้นทาง สร้างไฟล์ csv ที่ไม่มีข้อมูลมา (errorRequest.csv) app ต้องแจ้ง error ว่า "Error: file corrupted!" และไม่ทำต่อ
