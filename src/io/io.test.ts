@@ -13,11 +13,7 @@ const printLine = (message: string): IO<void> => () =>
 const program = pipe(
   readLine,
   io.map(str => `You entered: ${str}`),
-  io.flatMap(message =>
-    pipe(
-      printLine(message),
-      io.map(() => message)
-    ))
+  io.tap(message => printLine(message))
 )
 
 describe("io", () => {

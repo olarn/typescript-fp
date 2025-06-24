@@ -1,7 +1,7 @@
 import { IOEither } from "fp-ts/IOEither"
-import { right, left, isRight } from "fp-ts/Either"
-import { IO } from "fp-ts/lib/IO"
-import { pipe } from "fp-ts/lib/function"
+import { right, left } from "fp-ts/Either"
+import { IO } from "fp-ts/IO"
+import { pipe } from "fp-ts/function"
 import * as ioEither from "fp-ts/IOEither"
 
 const rightReadLine: IOEither<string, string> = () =>
@@ -10,18 +10,17 @@ const rightReadLine: IOEither<string, string> = () =>
 const leftReadLine: IOEither<string, string> = () =>
   left('Error')
 
-const printHello: IO<void> = () => console.log('Hello')
-
-const printLine = (message: string): IO<string> => () => {
+const printLine = (message: string): IO<void> => () =>
   console.log(message)
-  return message
-}
+
+const printHello: IO<void> = () =>
+  printLine('Hello')
 
 const program = pipe(
   ioEither.fromIO(printHello),
   ioEither.flatMap(() => rightReadLine),
   ioEither.map(str => `You entered: ${str}`),
-  ioEither.flatMap(message => ioEither.fromIO(printLine(message))),
+  ioEither.tap(message => ioEither.fromIO(printLine(message))),
   ioEither.match(
     () => 'Error',
     (message) => message
@@ -32,7 +31,7 @@ const program2 = pipe(
   ioEither.fromIO(printHello),
   ioEither.flatMap(() => leftReadLine),
   ioEither.map(str => `You entered: ${str}`),
-  ioEither.flatMap(message => ioEither.fromIO(printLine(message))),
+  ioEither.tap(message => ioEither.fromIO(printLine(message))),
   ioEither.match(
     () => 'Error',
     (message) => message

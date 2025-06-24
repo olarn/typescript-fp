@@ -21,7 +21,7 @@ describe('Options', () => {
   })
 
   it('should get Option of never from none function', () => {
-    // expect(none).toEqual({ _tag: 'none' })
+    // expect(none).toEqual({ _tag: 'None' })
   })
 
   it('should tell that option is some or none', () => {

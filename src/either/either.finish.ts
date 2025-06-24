@@ -20,20 +20,20 @@ function divideTwoIfEven(num: number): number {
 
 type Either<E, A> = Left<E> | Right<A>
 interface Left<E> {
-  _tag: 'left'
+  _tag: 'Left'
   left: E
 }
 interface Right<A> {
-  _tag: 'right'
+  _tag: 'Right'
   right: A
 }
 
-const left = <E, A=never>(e: E): Either<E, A> => ({
-  _tag: 'left', 
+const left = <E, A = never>(e: E): Either<E, A> => ({
+  _tag: 'Left',
   left: e
 })
-const right = <A, E=never>(a: A): Either<E, A> => ({
-  _tag: 'right',
+const right = <A, E = never>(a: A): Either<E, A> => ({
+  _tag: 'Right',
   right: a
 })
 
@@ -46,7 +46,7 @@ function divideTwoIfEvenFn(num: number): Either<string, number> {
   }
   return right(2 / num)
 }
-const isLeft = <E, A>(e: Either<E, A>): e is Left<E> => e._tag === 'left' 
+const isLeft = <E, A>(e: Either<E, A>): e is Left<E> => e._tag === 'Left'
 const composed = compose(
   (x) => isLeft(x) ? x : right(increment(x.right)),
   divideTwoIfEvenFn

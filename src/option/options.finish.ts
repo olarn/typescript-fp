@@ -12,17 +12,17 @@ const composed = compose(increment, divideTwo)
 
 type Option<A> = Some<A> | None
 interface Some<A> {
-  _tag: 'some',   // to distinguish between some and none 
+  _tag: 'Some',   // to distinguish between some and none 
   value: A
 }
 interface None {
-  _tag: 'none'
+  _tag: 'None'
 }
 
-const some = <A>(x: A): Option<A> => ({ _tag: 'some', value: x })
-const none: Option<never> = { _tag: 'none' }
+const some = <A>(x: A): Option<A> => ({ _tag: 'Some', value: x })
+const none: Option<never> = { _tag: 'None' }
 
-const isNone = <A>(x: Option<A>): x is None => x._tag === 'none';
+const isNone = <A>(x: Option<A>): x is None => x._tag === 'None';
 
 type DivideTwo2 = (x: number) => Option<number>
 const divideTwo2: DivideTwo2 = (x) => x === 0 ? none : some(2 / x)
