@@ -1,15 +1,24 @@
-# TypeScript Project with Functional Programming
+# TypeScript Functional Programming Learning Project
 
-A TypeScript project template with Node.js, Jest, and functional programming libraries (fp-ts).
+A TypeScript project for learning functional programming concepts using fp-ts library. This project contains various examples and exercises covering fundamental FP concepts like monads, functors, monoids, and more.
 
-## Prerequisites / ข้อกำหนดเบื้องต้น
+## 🎯 Learning Objectives
 
-### System Requirements / ข้อกำหนดของระบบ
-- Node.js v18.x or later
-- npm v9.x or later
-- Visual Studio Code (Latest version)
+This project covers:
+- **Algebraic Data Types (ADT)**: Either, Option, List
+- **Type Classes**: Functor, Monad, Monoid, Group, Semigroup, Magma
+- **Functional Programming Patterns**: Composition, Currying, Pattern Matching
+- **IO Operations**: Pure functional side effects
+- **Category Theory Concepts**: Basic category theory implementations and besic Lambda Calculus.
 
-### Verify Installation / ตรวจสอบการติดตั้ง
+## 📋 Prerequisites
+
+### System Requirements
+- **Node.js** v18.x or later
+- **npm** v9.x or later
+- **Visual Studio Code** (Recommended)
+
+### Verify Installation
 ```bash
 # Check Node.js version
 node --version  # Should be v18.x or later
@@ -18,67 +27,114 @@ node --version  # Should be v18.x or later
 npm --version   # Should be v9.x or later
 ```
 
-## Installation / การติดตั้ง
+## 🚀 Quick Start
 
-1. Clone the repository:
+1. **Clone the repository:**
 ```bash
 git clone <repository-url>
-cd <project-directory>
+cd typeScriptFn
 ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 ```bash
 npm install
 ```
 
-## Available Scripts / สคริปต์ที่ใช้งานได้
+3. **Run tests to verify setup:**
+```bash
+npm test
+```
 
-- `npm run dev` - Start development server with hot reload
-- `npm test` - Run tests with Jest (watch mode and coverage)
-- `npm run build` - Build TypeScript project
-
-## Project Structure / โครงสร้างโปรเจค
+## 📁 Project Structure
 
 ```
 src/
-  ├── app.ts        # Main application entry point
-  ├── __tests__/   # Test files
-  └── ...          # Other source files
+├── adt/                   # Algebraic Data Types
+│   ├── either/            # Either monad implementations
+│   ├── option/            # Option monad implementations
+│   └── list/              # List implementations
+├── category_theory/       # Category theory concepts
+├── compose/               # Function composition
+├── currying/              # Currying examples
+├── either/                # Either monad examples
+├── functor/               # Functor implementations
+├── group/                 # Group theory examples
+├── io/                    # IO monad examples
+├── linkedList/            # Linked list implementations
+├── magma/                 # Magma and monoid examples
+├── option/                # Option monad examples
+├── recursion/             # Recursion examples
+├── typeclass/             # Type class implementations
+└── _lab/                  # Lab exercises and requirements
 ```
 
-## Dependencies / ไลบรารี่ที่ใช้
+## 🛠️ Available Scripts
 
-### Main Dependencies
-- fp-ts: Functional programming utilities
-- ts-pattern: Pattern matching for TypeScript
-- ws: WebSocket client & server
-- papaparse: CSV parsing
-- node-xlsx: Excel file handling
+| Script | Description |
+|--------|-------------|
+| `npm test` | Run all tests with Jest (watch mode + coverage) |
+| `npm run dev` | Start development server with hot reload |
+| `npm run build` | Build TypeScript project |
 
-### Development Dependencies
-- TypeScript
-- Jest (with ts-jest)
-- ESLint
-- Nodemon
+## 📚 Learning Modules
 
-## Development Setup / การตั้งค่าสำหรับการพัฒนา
+### 1. Algebraic Data Types (ADT)
+- **Either**: Error handling with `Left` and `Right`
+- **Option**: Nullable value handling with `Some` and `None`
+- **List**: Functional list operations
 
-### VSCode Extensions / เอ็กซ์เทนชั่นสำหรับ VSCode
+### 2. Functional Patterns
+- **Composition**: Function composition with `pipe`
+- **Currying**: Partial function application
+- **Pattern Matching**: Using `ts-pattern`
+
+### 3. Type Classes
+- **Semigroup**: Associative operations
+- **Monoid**: Associative operations with identity
+- **Functor**: `map` operations
+- **Monad**: `flatMap` (aka chain in ft-ts) operations
+
+### 5. Lab Exercises
+- **_lab**: Practical exercises and real-world applications
+- **Card Approval System**: Business logic implementation with FP concepts
+- **Data Processing**: CSV and Excel file handling with functional patterns
+
+## 🧪 Testing
+
+### Running Tests
+```bash
+# Run all tests
+npm test
+
+# Run specific test file
+npx jest src/adt/either/either.test.ts
+
+# Run tests with coverage
+npx jest --coverage
+```
+
+### Test Structure
+Each module contains:
+- Implementation file (`.ts`)
+- Test file (`.test.ts`)
+- Completed version (`.finish.ts`) for reference
+
+## 🔧 Development Setup
+
+### Recommended VSCode Extensions
 
 #### Essential Extensions
-Install these extensions from VSCode Marketplace:
-1. [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-2. [TypeScript and JavaScript Language Features](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
-3. [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner)
-4. [Vitest](https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer)
-5. [Jest Snippets](https://marketplace.visualstudio.com/items?itemName=andys8.jest-snippets)
-6. [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
-7. [Jest Test Explorer](https://marketplace.visualstudio.com/items?itemName=kavod-io.vscode-jest-test-adapter)
+1. **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)** - Code linting
+2. **[TypeScript and JavaScript Language Features](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)** - TypeScript support
+3. **[Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner)** - Run Jest tests
+4. **[Jest Snippets](https://marketplace.visualstudio.com/items?itemName=andys8.jest-snippets)** - Jest code snippets
 
-#### Configure VSCode Settings
-1. Open VSCode settings (File > Preferences > Settings)
-2. Click on the "Open Settings (JSON)" icon in the top right
-3. Add the following configuration:
+#### Optional Extensions
+5. **[Vitest](https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer)** - Alternative test runner
+6. **[Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)** - Test explorer interface
+
+### VSCode Settings
+Add to your VSCode settings (File > Preferences > Settings > Open Settings JSON):
 
 ```json
 {
@@ -88,7 +144,6 @@ Install these extensions from VSCode Marketplace:
     "watch": true,
     "onSave": "test-file"
   },
-  "vitest.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -96,43 +151,80 @@ Install these extensions from VSCode Marketplace:
 }
 ```
 
-### Verify Development Setup / ตรวจสอบการตั้งค่าสำหรับการพัฒนา
+## 📦 Dependencies
 
-1. Verify TypeScript:
+### Core Dependencies
+- **fp-ts** (^2.16.9) - Functional programming utilities
+- **ts-pattern** (^5.6.2) - Pattern matching for TypeScript
+- **ws** (^8.14.2) - WebSocket client & server
+- **papaparse** (^5.4.1) - CSV parsing
+- **node-xlsx** (^0.4.0) - Excel file handling
+
+### Development Dependencies
+- **TypeScript** (^5.2.2) - TypeScript compiler
+- **Jest** (^29.6.4) - Testing framework
+- **ts-jest** (^29.1.1) - TypeScript support for Jest
+- **ESLint** (^8.52.0) - Code linting
+- **Nodemon** (^3.0.1) - Development server
+
+## 🎓 Learning Path
+
+### Beginner Level
+1. Start with `src/adt/` - Understand basic data types
+2. Move to `src/functor/` - Learn about functors
+3. Practice with `src/option/` - Handle nullable values
+
+### Intermediate Level
+4. Study `src/either/` - Error handling
+5. Explore `src/compose/` - Function composition
+6. Learn `src/currying/` - Partial application
+
+### Advanced Level
+7. Dive into `src/io/` - Side effects
+8. Study `src/typeclass/` - Type classes
+9. Explore `src/category_theory/` - Mathematical foundations
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**TypeScript compilation errors:**
 ```bash
-npx tsc --version
+npm run build
 ```
 
-2. Verify Jest:
+**Test failures:**
 ```bash
-npx jest --version
-```
-
-3. Verify ESLint:
-```bash
-npx eslint --version
-```
-
-## Testing / การทดสอบ
-
-Tests are written using Jest and can be run with:
-```bash
+# Clear Jest cache
+npx jest --clearCache
 npm test
 ```
 
-This will:
-- Run tests in watch mode
-- Generate coverage reports
-- Watch for file changes
+**Dependency issues:**
+```bash
+# Clear npm cache and reinstall
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
 
-### Test Configuration / การตั้งค่าการทดสอบ
+## 📖 Resources
 
-The project uses the following test configuration:
-- Jest for testing
-- ts-jest for TypeScript support
-- Coverage reporting enabled
-- Watch mode enabled by default
+### Documentation
+- [fp-ts Documentation](https://gcanti.github.io/fp-ts/)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [Jest Documentation](https://jestjs.io/docs/getting-started)
 
-## License / ใบอนุญาต
+### Books
+- "Functional Programming in TypeScript" by Giulio Canti
+- "Category Theory in Context" by Emily Riehl
+
+## 📄 License
 
 ISC License
+
+---
+
+**Happy Learning! 🚀**
+
+For questions or issues, please refer to the course materials or contact your instructor.
