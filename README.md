@@ -219,7 +219,8 @@ npm install
 - **fp slide.key**: Functional programming slides handout - open with macOS Keynote
 - "Functional Programming in TypeScript" by Giulio Canti
 - "Category Theory in Context" by Emily Riehl
-- [FP TypeScript]
+- [FP TypeScript video - Web Village Voyage](https://youtu.be/FaD5OCUU3hM?si=5XlhNw5uZfcUUcf5)
+- [Category Theory - by Bartosz Milewski](https://youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_&si=3J4k-rzpwsaMjh_Q)
 
 ## 📄 License
 
