@@ -1,6 +1,6 @@
 import {
   //  divideTwoIfEven, divideTwoIfEvenFn, left, right, composed
-} from "./either.finish"
+} from "./either"
 
 describe('Either', () => {
   it('should result if even number', () => {
